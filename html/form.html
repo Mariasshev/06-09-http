@@ -11,19 +11,19 @@
         <div class="row d-flex justify-content-center">
             <div class="col-4">
                 <h2 class="text-center mt-5">Заполните форму для входа</h1>
-                <form method="POST" action="/submit">
+                  <form method="POST" action="/submit">
                     <div class="mb-3">
                       <label for="login" class="form-label">Login</label>
-                      <input type="text" class="form-control" id="login" aria-describedby="loginHelp" required>
+                      <input type="text" class="form-control" id="login" name="login" value="maria" aria-describedby="loginHelp" required>
                       <div id="loginHelp" class="form-text">We'll never share your login with anyone else.</div>
                     </div>
                     <div class="mb-3">
                       <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1" required>
+                      <input type="password" class="form-control" id="exampleInputPassword1" name="password" value="123" required>
                     </div>
-                
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
+                  
             </div>
         </div>
     </section>
