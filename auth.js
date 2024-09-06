@@ -9,15 +9,15 @@ http.createServer((req, res) => {
         {
            // console.log('in parse block');
             let inf = '';
-            req.on('data', chunk =>{
-                inf += chunk.toString();
+            req.on('data', part =>{
+                inf += part.toString();
             })
     
             req.on('end', () => {
     
-                console.log(inf);
                 const parseData = querystring.parse(inf);
-                console.log(parseData);
+                
+                console.log(JSON.stringify(parseData, null, 2));
                 var path = url.parse(req.url).pathname;
                 path = 'html/' + 'index.html';
         
