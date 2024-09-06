@@ -7,17 +7,18 @@ http.createServer((req, res) => {
 
     if(req.method == 'POST' && req.url == '/submit')
         {
+            console.log('Request URL:', req.url);
            // console.log('in parse block');
             let inf = '';
-            req.on('data', part =>{
-                inf += part.toString();
+            req.on('data', buff =>{
+                inf += buff.toString();
             })
     
             req.on('end', () => {
     
                 const parseData = querystring.parse(inf);
-                
                 console.log(JSON.stringify(parseData, null, 2));
+
                 var path = url.parse(req.url).pathname;
                 path = 'html/' + 'index.html';
         
@@ -35,11 +36,10 @@ http.createServer((req, res) => {
                         res.end();
                     }
                 })
-    
             })
         
-        }
-    else{
+    }else
+    {
         var path = url.parse(req.url).pathname;
         path = 'html/' + 'form.html';
 
